@@ -24,19 +24,25 @@
     <!-- Main Content -->
     <main class="main-container">
         <div class="container">
+            <!-- Update Status -->
+            <div class="update-status">
+                <span id="lastUpdate" class="last-update">Last updated: <strong id="updateTime">--</strong></span>
+                <button id="refreshBtn" class="refresh-btn">🔄 Refresh</button>
+            </div>
+
             <!-- Table of Contents -->
             <div id="tableOfContents" class="table-of-contents">
                 <h2 class="toc-title">📋 Top 10 Global Events</h2>
-                <p class="toc-subtitle">Click any event to load detailed multi-source analysis</p>
+                <p class="toc-subtitle">Click any event to view detailed analysis • Top 3 pre-loaded</p>
                 <div id="tocList" class="toc-list">
-                    <!-- TOC items populated by JS -->
+                    <!-- TOC items populated instantly -->
                 </div>
             </div>
 
             <!-- Loading State -->
-            <div id="loadingState" class="loading-state">
+            <div id="loadingState" class="loading-state" style="display: none;">
                 <div class="spinner"></div>
-                <p>Aggregating news from multiple sources...</p>
+                <p>Loading analysis...</p>
             </div>
 
             <!-- Events Container -->
