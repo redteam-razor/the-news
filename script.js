@@ -425,6 +425,7 @@ function renderEvents(events) {
     });
     
     setupDragAndDrop();
+    setupCollapsibleSections();
 }
 
 function createEventCard(event, rank) {
@@ -494,11 +495,12 @@ function createSourceSection(title, entries, type) {
     const sectionClass = `source-section-${type}`;
     
     return `
-        <div class="source-section ${sectionClass}">
+        <div class="source-section ${sectionClass} collapsed" data-section-type="${type}">
             <div class="source-section-header">
                 <span class="source-icon">${icon}</span>
                 <h3 class="source-section-title">${title}</h3>
                 <span class="source-count">${entries.length} entries</span>
+                <span class="collapse-icon">▼</span>
             </div>
             <div class="source-entries">
                 ${entries.map(entry => createSourceEntry(entry, type)).join('')}
@@ -613,6 +615,21 @@ function updateEventRanks() {
         if (rankElement) {
             rankElement.textContent = `#${index + 1}`;
         }
+    });
+}
+
+// ===================================
+// COLLAPSIBLE SECTIONS
+// ===================================
+
+function setupCollapsibleSections() {
+    const sectionHeaders = document.querySelectorAll('.source-section-header');
+    
+    sectionHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            const section = this.closest('.source-section');
+            section.classList.toggle('collapsed');
+        });
     });
 }
 
