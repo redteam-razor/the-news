@@ -24,9 +24,13 @@
     <!-- Main Content -->
     <main class="main-container">
         <div class="container">
-            <!-- Instructions -->
-            <div class="instructions">
-                <p>📊 Showing top 5 global events with deep analysis. <strong>Drag events up/down</strong> to prioritize by your interest.</p>
+            <!-- Table of Contents -->
+            <div id="tableOfContents" class="table-of-contents">
+                <h2 class="toc-title">📋 Top 10 Global Events</h2>
+                <p class="toc-subtitle">Click any event to load detailed multi-source analysis</p>
+                <div id="tocList" class="toc-list">
+                    <!-- TOC items populated by JS -->
+                </div>
             </div>
 
             <!-- Loading State -->
@@ -54,6 +58,7 @@
         </div>
     </footer>
 
+    <script src="events-data.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
