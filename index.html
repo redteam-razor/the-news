@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The News - Global Events Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">The News</h1>
+                <p class="tagline">Multi-Source Global Events Analysis</p>
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search events... (e.g., US Iran war)">
+                <button id="searchBtn" class="search-btn">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <div class="container">
+            <!-- Instructions -->
+            <div class="instructions">
+                <p>📊 Showing top 5 global events with deep analysis. <strong>Drag events up/down</strong> to prioritize by your interest.</p>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loadingState" class="loading-state">
+                <div class="spinner"></div>
+                <p>Aggregating news from multiple sources...</p>
+            </div>
+
+            <!-- Events Container -->
+            <div id="eventsContainer" class="events-container"></div>
+
+            <!-- No Results -->
+            <div id="noResults" class="no-results" style="display: none;">
+                <h3>No events found</h3>
+                <p>Try a different search term or refresh the page.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>The News © 2026 | Aggregating from: Reuters, BBC, CNN, AP, Al Jazeera, The Guardian, NYT + Social Media + YouTube</p>
+            <p style="font-size: 0.75rem; margin-top: 0.5rem;">Live updates • Multi-source verification • AI-powered analysis</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
